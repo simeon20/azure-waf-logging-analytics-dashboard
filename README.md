@@ -114,8 +114,8 @@ You can also confirm under the WAF policy blade → Associated application gatew
 
 ---
 Step 3. Log Analytics Workspace to collect and query diagnostic logs.<br>
-![DiagnosticSettings Screenshot](DiagnosticSettings1.png) <br>
-![DiagnosticSettings Screenshot](DiagnosticSettings2.png) <br>
+![Log Analytics workspace Screenshot](LogAnalyticsworkspace.png)<br>
+
 (1) Create a Log Analytics Workspace (Portal)
 
 1. In the Azure portal, search “Log Analytics workspaces” → Create.
