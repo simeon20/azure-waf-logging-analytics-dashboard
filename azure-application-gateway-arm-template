@@ -1,7 +1,6 @@
-// web application generic version for github
 // everthing is sanitized 
 
-Now it’s safe to push to GitHub.
+safe to push to GitHub.
 
 Subscription IDs replaced with 00000000-0000-0000-0000-000000000000
 
@@ -152,3 +151,4 @@ Subnet/IPs generalized
     }
   ]
 }
+
