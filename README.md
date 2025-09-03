@@ -37,7 +37,6 @@ Deployable ARM template for Azure Application Gateway (WAF v2) with built-in tra
 [View the ARM Template](azure-application-gateway-arm-template)
 <br>
 <br>
-<br>
 1. Go to the Azure Portal → Create a resource → search “Template deployment (deploy using custom templates)” → Create.
 
 2. On Custom deployment, choose Build your own template in the editor → Load file → upload your template.json.
@@ -60,10 +59,10 @@ Post-deploy checks (Portal):
 
   Resource Group → Application Gateways → select your gateway. Confirm:
 
-    Status = Running
+        Status = Running
 
-    Frontend public IP is assigned
+        Frontend public IP is assigned
 
-    Backend health shows Healthy for the probe
+        Backend health shows Healthy for the probe
 
-    WAF policy is attached
+        WAF policy is attached
