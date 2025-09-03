@@ -155,5 +155,6 @@ Workbooks & Dashboards to visualize key metrics such as:
 ![BuildQuery Screenshot](TopTargetedURLQuery1.png)<br>
 
 ---
+![Save workbook Screenshot](SaveWorkbook.png)<br>
 ![Pin workbook Screenshot](Pinworkbookstodashboard.png)<br>
 
