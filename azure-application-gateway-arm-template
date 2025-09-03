@@ -1,7 +1,5 @@
 // Everthing is sanitized 
 
-safe to push to GitHub.
-
 Subscription IDs replaced with 00000000-0000-0000-0000-000000000000
 
 Resource Groups renamed DemoResourceGroup
@@ -151,5 +149,6 @@ Subnet/IPs generalized
     }
   ]
 }
+
 
 
