@@ -115,4 +115,34 @@ You can also confirm under the WAF policy blade → Associated application gatew
 ---
 Step 3. Log Analytics Workspace to collect and query diagnostic logs.<br>
 ![DiagnosticSettings Screenshot](DiagnosticSettings1.png) <br>
-![DiagnosticSettings Screenshot](DiagnosticSettings2.png)
+![DiagnosticSettings Screenshot](DiagnosticSettings2.png) <br>
+(1) Create a Log Analytics Workspace (Portal)
+
+1. In the Azure portal, search “Log Analytics workspaces” → Create.
+
+2. Pick Subscription, Resource group, Workspace name, Region (ideally the same region as your resources).
+
+3. Review + create.
+   
+(2) Send logs to the workspace (Diagnostic settings) Do this on each resource whose logs you want.
+
+1. Open the resource (e.g., Application Gateway).
+
+2. Go to Monitoring ➜ Diagnostic settings → + Add diagnostic setting.
+
+3. Name it (e.g., send-to-law).
+
+4. Select log categories (and metrics if offered).
+
+        Example for App Gateway/WAF:
+
+                ApplicationGatewayAccessLog
+
+                ApplicationGatewayFirewallLog
+
+                ApplicationGatewayPerformanceLog
+
+5. Under Destination details, check Send to Log Analytics workspace → select your Workspace.
+
+6. Save.
+
