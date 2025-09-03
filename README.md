@@ -7,7 +7,7 @@ This project demonstrates how to set up Azure Application Gateway with Web Appli
 
 Built a custom Azure WAF monitoring solution leveraging:
 
-Azure Application Gateway (WAF v2) for traffic inspection & protection.
+Deployable ARM template for Azure Application Gateway (WAF v2) with built-in traffic inspection and protection.
 
 Log Analytics Workspace to collect and query diagnostic logs.
 
