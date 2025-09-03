@@ -150,3 +150,6 @@ Step 3. Log Analytics Workspace to collect and query diagnostic logs.<br>
 
 6. Save.
 
+---
+Workbooks & Dashboards to visualize key metrics such as:
+
