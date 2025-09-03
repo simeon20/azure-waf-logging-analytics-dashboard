@@ -113,4 +113,6 @@ Back in the Application Gateway Web application firewall pane, you should see yo
 You can also confirm under the WAF policy blade → Associated application gateways.
 
 ---
-Step 3. Log Analytics Workspace to collect and query diagnostic logs.
+Step 3. Log Analytics Workspace to collect and query diagnostic logs.<br>
+![DiagnosticSettings Screenshot](DiagnosticSettings1.png) <br>
+![DiagnosticSettings Screenshot](DiagnosticSettings2.png)
