@@ -33,7 +33,7 @@ Blocked requests over time
 Getting Started<br>
 <br>
 Step 1.
-Deployable ARM template for Azure Application Gateway (WAF v2) with built-in traffic inspection and protection.
+Deployable ARM template for Azure Application Gateway (WAF v2) with built-in traffic inspection and protection and assocate/add a WAF Policy.
 [View the ARM Template](azure-application-gateway-arm-template)
 <br>
 <br>
@@ -66,3 +66,7 @@ Post-deploy checks (Portal):
         Backend health shows Healthy for the probe
 
         WAF policy is attached
+        <br>
+WAP Policy
+![WAF Screenshot](WAFPolicy.png)
+
