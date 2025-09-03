@@ -152,4 +152,5 @@ Step 3. Log Analytics Workspace to collect and query diagnostic logs.<br>
 
 ---
 Workbooks & Dashboards to visualize key metrics such as:
+![BuildQuery Screenshot](TopTargetedURLQuery1.png)<br>
 
