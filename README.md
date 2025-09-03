@@ -1,5 +1,5 @@
 # azure-waf-logging-analytics-dashboard
-Built a custom Azure WAF monitoring solution leveraging Log Analytics, Workbooks, and dashboards to visualize web traffic and security events.
+Built a custom Azure WAF monitoring solution leveraging Log Analytics, Workbooks, and dashboards to visualize live web traffic and security events.
 ---
 This project demonstrates how to set up Azure Application Gateway with Web Application Firewall (WAF) and integrate it with Log Analytics, Workbooks, and Dashboards for monitoring real-world web traffic and security events.
 
@@ -201,4 +201,8 @@ Pin a Workbook (or specific visual) to a Dashboard
 4. Same choice: private or shared dashboard.
 
 This way you can pin just the “Top Attacking IPs” pie chart or “Blocked vs Allowed per URL” bar chart directly, instead of the full workbook.
+
+---
+Navigate to your Dashboard (ongrats, your new dashboard is live)<br>
+![Dashboard Screenshot](MyDashboard.png)
 
