@@ -203,6 +203,6 @@ Pin a Workbook (or specific visual) to a Dashboard
 This way you can pin just the “Top Attacking IPs” pie chart or “Blocked vs Allowed per URL” bar chart directly, instead of the full workbook.
 
 ---
-Navigate to your Dashboard (ongrats, your new dashboard is live)<br>
+Navigate to your Dashboard (congrats, your new dashboard is live)<br>
 ![Dashboard Screenshot](MyDashboard.png)
 
