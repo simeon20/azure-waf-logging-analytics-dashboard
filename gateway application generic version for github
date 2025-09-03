@@ -1,0 +1,154 @@
+// web application generic version for github
+// everthing is sanitized 
+
+Now it’s safe to push to GitHub.
+
+Subscription IDs replaced with 00000000-0000-0000-0000-000000000000
+
+Resource Groups renamed DemoResourceGroup
+
+Backend changed to example.com
+
+Subnet/IPs generalized
+------
+
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "applicationGateways_name": {
+      "defaultValue": "Demo-APPGateway-WAF",
+      "type": "String"
+    },
+    "virtualNetworks_vnet_externalid": {
+      "defaultValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/DemoResourceGroup/providers/Microsoft.Network/virtualNetworks/DemoVNet",
+      "type": "String"
+    },
+    "publicIPAddresses_agw_ip_externalid": {
+      "defaultValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/DemoResourceGroup/providers/Microsoft.Network/publicIPAddresses/Demo-AGW-IP",
+      "type": "String"
+    },
+    "ApplicationGatewayWebApplicationFirewallPolicies_policy_externalid": {
+      "defaultValue": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/DemoResourceGroup/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/Demo-WAF-Policy",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/applicationGateways",
+      "apiVersion": "2024-07-01",
+      "name": "[parameters('applicationGateways_name')]",
+      "location": "eastus",
+      "zones": ["1", "2", "3"],
+      "properties": {
+        "sku": {
+          "name": "WAF_v2",
+          "tier": "WAF_v2",
+          "family": "Generation_1"
+        },
+        "gatewayIPConfigurations": [
+          {
+            "name": "appGatewayIpConfig",
+            "properties": {
+              "subnet": {
+                "id": "[concat(parameters('virtualNetworks_vnet_externalid'), '/subnets/DemoSubnet')]"
+              }
+            }
+          }
+        ],
+        "frontendIPConfigurations": [
+          {
+            "name": "appGwPublicFrontendIpIPv4",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[parameters('publicIPAddresses_agw_ip_externalid')]"
+              }
+            }
+          }
+        ],
+        "frontendPorts": [
+          {
+            "name": "port_80",
+            "properties": { "port": 80 }
+          }
+        ],
+        "backendAddressPools": [
+          {
+            "name": "example-backend",
+            "properties": {
+              "backendAddresses": [{ "fqdn": "example.com" }]
+            }
+          }
+        ],
+        "backendHttpSettingsCollection": [
+          {
+            "name": "example-backend-https",
+            "properties": {
+              "port": 443,
+              "protocol": "Https",
+              "cookieBasedAffinity": "Disabled",
+              "pickHostNameFromBackendAddress": true,
+              "requestTimeout": 20,
+              "probe": {
+                "id": "[concat(resourceId('Microsoft.Network/applicationGateways', parameters('applicationGateways_name')), '/probes/example-probe')]"
+              }
+            }
+          }
+        ],
+        "httpListeners": [
+          {
+            "name": "Listener-http-80",
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[concat(resourceId('Microsoft.Network/applicationGateways', parameters('applicationGateways_name')), '/frontendIPConfigurations/appGwPublicFrontendIpIPv4')]"
+              },
+              "frontendPort": {
+                "id": "[concat(resourceId('Microsoft.Network/applicationGateways', parameters('applicationGateways_name')), '/frontendPorts/port_80')]"
+              },
+              "protocol": "Http"
+            }
+          }
+        ],
+        "requestRoutingRules": [
+          {
+            "name": "Rule-http-to-example",
+            "properties": {
+              "ruleType": "Basic",
+              "priority": 1,
+              "httpListener": {
+                "id": "[concat(resourceId('Microsoft.Network/applicationGateways', parameters('applicationGateways_name')), '/httpListeners/Listener-http-80')]"
+              },
+              "backendAddressPool": {
+                "id": "[concat(resourceId('Microsoft.Network/applicationGateways', parameters('applicationGateways_name')), '/backendAddressPools/example-backend')]"
+              },
+              "backendHttpSettings": {
+                "id": "[concat(resourceId('Microsoft.Network/applicationGateways', parameters('applicationGateways_name')), '/backendHttpSettingsCollection/example-backend-https')]"
+              }
+            }
+          }
+        ],
+        "probes": [
+          {
+            "name": "example-probe",
+            "properties": {
+              "protocol": "Https",
+              "path": "/",
+              "interval": 30,
+              "timeout": 30,
+              "unhealthyThreshold": 3,
+              "pickHostNameFromBackendHttpSettings": true,
+              "match": { "statusCodes": ["200-399"] }
+            }
+          }
+        ],
+        "enableHttp2": true,
+        "autoscaleConfiguration": { "minCapacity": 1, "maxCapacity": 10 },
+        "firewallPolicy": {
+          "id": "[parameters('ApplicationGatewayWebApplicationFirewallPolicies_policy_externalid')]"
+        }
+      }
+    }
+  ]
+}
