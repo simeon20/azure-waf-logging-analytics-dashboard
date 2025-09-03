@@ -30,3 +30,5 @@ Top 10 WAF rules triggered
 Blocked requests over time
 
 ---
+Getting Started Step 1.
+Deployable ARM template for Azure Application Gateway (WAF v2) with built-in traffic inspection and protection.
