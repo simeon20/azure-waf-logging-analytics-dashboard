@@ -153,6 +153,19 @@ Step 3. Log Analytics Workspace to collect and query diagnostic logs.<br>
 ---
 Workbooks & Dashboards to visualize key metrics such as:
 ![BuildQuery Screenshot](TopTargetedURLQuery1.png)<br>
+Build Quires in a new workbook (Create the workbook):
+
+1. In the portal, open Log Analytics workspaces → your workspace → Workbooks.
+
+2. Click + New → you’re in edit mode.
+
+3. Click Add → Add query to insert your first tile. <br>
+
+[TopTargetedURL](TopTargetedURLQuery1.png)<br>                                                  
+[Top10WAFRulesTriggered](Top10WAFRulesTriggeredQuery2.png)<br>                              
+[BlockedvsAllowedPerURL](BlockedvsAllowedPerURLQuery3.png)<br>                      
+[TopAttackingIPs](TopAttackingIPsQuery4.png)<br>                                                       
+[BlockedRequestsOverTime](BlockedRequestsOverTimeQuery5.png)<br>
 
 ---
 ![Save workbook Screenshot](SaveWorkbook.png)<br>
