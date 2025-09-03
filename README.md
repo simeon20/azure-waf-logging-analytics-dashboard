@@ -168,6 +168,37 @@ Build Quires in a new workbook (Create the workbook):
 [BlockedRequestsOverTime](BlockedRequestsOverTimeQuery5.png)<br>
 
 ---
+Save Workbooks & Pin to Dashboard<br>
+Save a Workbook:
 ![Save workbook Screenshot](SaveWorkbook.png)<br>
+1. While editing, in the Workbook toolbar (top), click Done Editing.
+
+This switches it from edit mode to view mode.
+
+2. In the top left, click Save (floppy disk icon).
+
+3. Fill out:
+
+        Name: e.g., WAF Monitoring
+
+        Subscription: pick the right one
+
+        Resource group: where the workbook should live
+
+        Location: (usually same as your Log Analytics Workspace)
+
+4. Click OK / Save.
+
+---
+Pin a Workbook (or specific visual) to a Dashboard
 ![Pin workbook Screenshot](Pinworkbookstodashboard.png)<br>
+1. While editing the workbook, hover over a chart/tile.
+
+2. In the top-right of that tile, click the … (More options) menu.
+
+3.Choose Pin to dashboard.
+
+4.Same choice: private or shared dashboard.
+
+This way you can pin just the “Top Attacking IPs” pie chart or “Blocked vs Allowed per URL” bar chart directly, instead of the full workbook.
 
