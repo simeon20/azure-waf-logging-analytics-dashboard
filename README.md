@@ -161,10 +161,10 @@ Build Quires in a new workbook (Create the workbook):
 
 3. Click Add → Add query to insert your first tile. <br>
 
-[TopTargetedURL](TopTargetedURLQuery1.png)<br>                                                  
-[Top10WAFRulesTriggered](Top10WAFRulesTriggeredQuery2.png)<br>                              
-[BlockedvsAllowedPerURL](BlockedvsAllowedPerURLQuery3.png)<br>                      
-[TopAttackingIPs](TopAttackingIPsQuery4.png)<br>                                                       
+[TopTargetedURL](TopTargetedURLQuery1.png)<br> 
+[TopAttackingIPs](TopAttackingIPsQuery4.png)<br>  
+[BlockedvsAllowedPerURL](BlockedvsAllowedPerURLQuery3.png)<br>
+[Top10WAFRulesTriggered](Top10WAFRulesTriggeredQuery2.png)<br>                                                 
 [BlockedRequestsOverTime](BlockedRequestsOverTimeQuery5.png)<br>
 
 ---
