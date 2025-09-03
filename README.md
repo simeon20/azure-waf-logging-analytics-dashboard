@@ -68,5 +68,5 @@ Post-deploy checks (Portal):
         WAF policy is attached
         <br>
 WAP Policy
-![WAF Screenshot](WAFPolicy.png)
+! [WAF Screenshot](WAFPolicy.png)
 
