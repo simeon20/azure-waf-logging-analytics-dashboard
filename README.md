@@ -194,11 +194,11 @@ Pin a Workbook (or specific visual) to a Dashboard
 ![Pin workbook Screenshot](Pinworkbookstodashboard.png)<br>
 1. While editing the workbook, hover over a chart/tile.
 
-2. In the top-right of that tile, click the … (More options) menu.
+2. In the top-right of that tile, click the … (More options) menu or Click the pin icon located to the right, in the middle of the chart toolbar.
 
-3.Choose Pin to dashboard.
+3. Choose Pin to dashboard.
 
-4.Same choice: private or shared dashboard.
+4. Same choice: private or shared dashboard.
 
 This way you can pin just the “Top Attacking IPs” pie chart or “Blocked vs Allowed per URL” bar chart directly, instead of the full workbook.
 
