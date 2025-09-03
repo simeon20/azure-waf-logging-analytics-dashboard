@@ -33,7 +33,7 @@ Blocked requests over time
 Getting Started<br>
 <br>
 Step 1.
-Deployable ARM template for Azure Application Gateway (WAF v2) with built-in traffic inspection and protection and associate/add a WAF Policy.
+Deployable ARM template for Azure Application Gateway (WAF v2) with built-in traffic inspection and protection.
 [View the ARM Template](azure-application-gateway-arm-template)
 <br>
 <br>
@@ -67,7 +67,50 @@ Post-deploy checks (Portal):
 
         WAF policy is attached
         <br>
-WAP Policy
+---
+Step 2. Associate/add a WAF PolicyWAP Policy
 <br>
 ![WAF Screenshot](WAFPolicy.png)
+<br>
+1. Open your Application Gateway
+
+In the Azure Portal, search for Application Gateways and select your gateway.
+
+2. Go to Web Application Firewall settings
+
+In the left menu under Settings, click Web application firewall.
+
+You’ll see the current WAF configuration (enabled/disabled, prevention/detection mode, etc.).
+
+3. Select WAF policy option
+
+Choose Use WAF policy.
+
+Click Select a WAF policy.
+
+4. Choose or create a policy
+
+If you already have a policy (like HomePage-WAF-Policy), select it.
+
+Otherwise, click Create new policy, configure it (mode, managed rules, custom rules, etc.), and save.
+
+5. Set scope of association
+
+Global association: The policy applies to all listeners on the gateway.
+
+Per listener association: You can attach different policies to different listeners (e.g., for different apps or domains behind the same gateway).
+
+6. Save and apply
+
+Click Save.
+
+Deployment may take a few minutes as the gateway configuration updates.
+
+7. Verify
+
+Back in the Application Gateway Web application firewall pane, you should see your selected policy listed.
+
+You can also confirm under the WAF policy blade → Associated application gateways.
+
+---
 
