@@ -123,8 +123,12 @@ Step 3. Log Analytics Workspace to collect and query diagnostic logs.<br>
 2. Pick Subscription, Resource group, Workspace name, Region (ideally the same region as your resources).
 
 3. Review + create.
+
+---
    
 (2) Send logs to the workspace (Diagnostic settings) Do this on each resource whose logs you want.
+![DiagnosticSettings Screenshot](DiagnosticSettings1.png)<br>
+![DiagnosticSettings Screenshot](DiagnosticSettings2.png)<br>
 
 1. Open the resource (e.g., Application Gateway).
 
